@@ -54,7 +54,13 @@ raw_data.columns = [
 raw_data['open_time'] = pd.to_datetime(raw_data['open_time'], unit='ms')
 raw_data.index = raw_data['open_time']
 raw_data.drop('open_time', axis=1, inplace=True)
-raw_data['average_price'] = raw_data['quote_volume'] / raw_data['volume']
+raw_data['average_price'] = raw_data['quote_volume'] / raw_data['volume'] #计算均价
+
+data = raw_data[['average_price']]
+# #计算每日较前日回报率
+# data = (raw_data[['average_price']].diff(periods=1) / raw_data[['average_price']].shift(1)).dropna()
+
+print(data)
 
 rolling_width = 50
 def rolling_predict(data):
@@ -110,9 +116,8 @@ def rolling_predict(data):
 
     # plt.show()
 
-data = (raw_data[['average_price']] - raw_data[['average_price']].iat[0, 0]) / raw_data[['average_price']].iat[0, 0]
-# print('data=');print(data)
 
+# print('data=');print(data)
 
 predictions = pd.DataFrame(index=raw_data.index, columns=['average_price'])
 for i in range(rolling_width, len(data)):
