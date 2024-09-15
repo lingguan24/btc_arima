@@ -13,4 +13,4 @@ Abnormal values occured due to sigularity of the covariance matrix. Filter these
 # Result
 ![](./Figure_1.svg)
 # Conclusion
-The result is not much satisfactory due to calculation error and the model itself. Often than not, the fitted model does not have either AR part or MA part.
+The result is not much satisfactory due to calculation error and the model itself. Often than not, the fitted model does not have either AR part or MA part. But in the begining, the result is relatively more sensible.
