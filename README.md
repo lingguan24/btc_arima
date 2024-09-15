@@ -3,13 +3,13 @@ This programe aims to build a predictive model of BTC price based on classic tim
 # Data Pre-processing
 Calculated the return based on average price of each day.
 # Peremeters Picking
-To determine the d in ARIMA(p, d, q), I calculate the d difference and do the Fuller test to see if the resulting series is stationary. Then p and q in ARIMA(p, d, q) is determined through minimizing BIC.
+To determine the $d$ in ARIMA($p$, $d$, $q$), I calculate the d difference and do the Fuller test to see if the resulting series is stationary. Then $p$ and $q$ in ARIMA($p$, $d$, $q$) is determined through minimizing BIC.
 # Model Fitting
 Fit the model using the last 50 days's average price.
 # Prediction
 Output the predicted price of the next first day.
 # Filtering
-Abnormal values occured due to sigularity of the covariance matrix. Filter these values by setting a range of [10000, 100000] 
+Abnormal values occured due to sigularity of the covariance matrix. Filter these values by setting a range of $[10000, 100000]$ 
 # Result
 ![](./Figure_1.svg)
 # Conclusion
